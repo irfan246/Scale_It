@@ -10,10 +10,15 @@ class PilihMode extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
-            padding: const EdgeInsets.all(8),
-            onPressed: () {},
-            icon:
-                const Image(image: AssetImage('assets/images/arrow_back.png'))),
+            padding: const EdgeInsets.only(left: 20),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Image(
+              image: AssetImage('assets/images/arrow_back.png'),
+              width: 70.79,
+              height: 31,
+            )),
       ),
       body: Stack(
         children: [
