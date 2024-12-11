@@ -4,7 +4,7 @@ import 'route/route.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
