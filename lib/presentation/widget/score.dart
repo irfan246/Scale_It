@@ -29,7 +29,7 @@ class Score extends StatelessWidget {
     return BlocBuilder<TinggiHewanBloc, TinggiHewanState>(
       builder: (context, state) {
         return Material(
-          color: Colors.black.withAlpha(173),
+          color: Colors.transparent,
           child: SizedBox(
             child: Center(
               child: Padding(

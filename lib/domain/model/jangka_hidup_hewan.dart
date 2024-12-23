@@ -1,8 +1,8 @@
 class JangkaHidupHewan {
   final String name;
-  final int height;
+  final int year;
   final String imagePath;
 
   JangkaHidupHewan(
-      {required this.name, required this.height, required this.imagePath});
+      {required this.name, required this.year, required this.imagePath});
 }

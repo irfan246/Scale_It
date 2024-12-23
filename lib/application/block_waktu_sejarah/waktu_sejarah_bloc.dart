@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -55,11 +54,11 @@ class WaktuSejarahBloc extends Bloc<WaktuSejarahEvent, WaktuSejarahState> {
   void _generateNewRound(Emitter<WaktuSejarahState> emit, int score) {
     WaktuSejarah questionWaktuSejarah =
         waktuSejarah[random.nextInt(waktuSejarah.length)];
-    WaktuSejarah referenceWaktuAnimal;
+    WaktuSejarah referenceWaktuSejarah;
 
     do {
-      referenceWaktuAnimal = waktuSejarah[random.nextInt(waktuSejarah.length)];
-    } while (referenceWaktuAnimal.name == questionWaktuSejarah.name);
+      referenceWaktuSejarah = waktuSejarah[random.nextInt(waktuSejarah.length)];
+    } while (referenceWaktuSejarah.name == questionWaktuSejarah.name);
 
     // Acak widget mana yang menjadi Question dan Reference
     bool isWidget1Question = random.nextBool();
@@ -67,7 +66,7 @@ class WaktuSejarahBloc extends Bloc<WaktuSejarahEvent, WaktuSejarahState> {
     emit(WaktuSejarahLoaded(
       score: score,
       questionWaktuSejarah: questionWaktuSejarah,
-      referenceWaktuSejarah: referenceWaktuAnimal,
+      referenceWaktuSejarah: referenceWaktuSejarah,
       isWidget1Question:
           isWidget1Question, // True jika Widget 1 adalah Question
     ));
@@ -75,9 +74,9 @@ class WaktuSejarahBloc extends Bloc<WaktuSejarahEvent, WaktuSejarahState> {
 
   bool _checkAnswer(String answer, int questionHeight, int referenceHeight) {
     if (answer == 'dahulu') {
-      return questionHeight > referenceHeight;
-    } else if (answer == 'baru') {
       return questionHeight < referenceHeight;
+    } else if (answer == 'baru') {
+      return questionHeight > referenceHeight;
     }
     return false;
   }

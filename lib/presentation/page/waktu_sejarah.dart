@@ -190,6 +190,7 @@ class WaktuSejarah extends StatelessWidget {
     showDialog(
       context: context,
       barrierDismissible: true,
+      barrierColor: Colors.black.withAlpha(110),
       builder: (context) {
         return Score(
           database: database,

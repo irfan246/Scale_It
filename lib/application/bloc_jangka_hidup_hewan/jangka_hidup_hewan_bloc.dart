@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +25,8 @@ class JangkaHidupHewanBloc
         final currentState = state as JangkaHidupHewanLoaded;
         final isCorrect = _checkAnswer(
           event.answer,
-          currentState.questionJangkaHidupHewan.height,
-          currentState.referenceJangkaHidupHewan.height,
+          currentState.questionJangkaHidupHewan.year,
+          currentState.referenceJangkaHidupHewan.year,
         );
 
         if (isCorrect) {

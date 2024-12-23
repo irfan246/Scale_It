@@ -45,7 +45,7 @@ class JangkaHidupHewan extends StatelessWidget {
                                 ? state.questionJangkaHidupHewan
                                 : state.referenceJangkaHidupHewan,
                             subText:
-                                '${state.isWidget1Question ? '?' : state.referenceJangkaHidupHewan.height.toString()} tahun',
+                                '${state.isWidget1Question ? '?' : state.referenceJangkaHidupHewan.year.toString()} tahun',
                             isCorrect: state.isWidget1Question,
                             showCorrectIndicator: state.showCorrectIndicator,
                             borderColor: state.isWidget1Question
@@ -60,7 +60,7 @@ class JangkaHidupHewan extends StatelessWidget {
                                 ? state.questionJangkaHidupHewan
                                 : state.referenceJangkaHidupHewan,
                             subText:
-                                '${!state.isWidget1Question ? '?' : state.referenceJangkaHidupHewan.height.toString()} tahun',
+                                '${!state.isWidget1Question ? '?' : state.referenceJangkaHidupHewan.year.toString()} tahun',
                             isCorrect: !state.isWidget1Question,
                             showCorrectIndicator: state.showCorrectIndicator,
                             borderColor: !state.isWidget1Question
@@ -190,6 +190,7 @@ class JangkaHidupHewan extends StatelessWidget {
     showDialog(
       context: context,
       barrierDismissible: true,
+      barrierColor: Colors.black.withAlpha(110),
       builder: (context) {
         return Score(
           database: database,
