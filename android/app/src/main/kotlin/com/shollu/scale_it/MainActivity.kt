@@ -1,0 +1,5 @@
+package com.shollu.scale_it
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
